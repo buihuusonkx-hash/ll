@@ -1,0 +1,5 @@
+{
+  "name": "Digital Competency Lesson Plan Generator",
+  "description": "An AI-powered tool to help teachers create digital competency lesson plans using Gemini.",
+  "requestFramePermissions": []
+}
