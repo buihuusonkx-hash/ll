@@ -130,6 +130,7 @@ const App = () => {
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Môn học</label>
                   <Select 
                     showSearch
+                    autoComplete="none"
                     className="w-full h-12" 
                     value={subject} 
                     onChange={setSubject}
@@ -153,6 +154,7 @@ const App = () => {
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Khối lớp</label>
                   <Select 
                     showSearch
+                    autoComplete="none"
                     className="w-full h-12" 
                     value={grade} 
                     onChange={setGrade}
