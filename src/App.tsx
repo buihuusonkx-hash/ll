@@ -129,10 +129,12 @@ const App = () => {
                 <div>
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Môn học</label>
                   <Select 
+                    showSearch
                     className="w-full h-12" 
                     value={subject} 
                     onChange={setSubject}
                     size="large"
+                    optionFilterProp="children"
                   >
                     <Option value="Toán học">Toán học</Option>
                     <Option value="Ngữ văn">Ngữ văn</Option>
@@ -150,10 +152,13 @@ const App = () => {
                 <div>
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Khối lớp</label>
                   <Select 
+                    showSearch
                     className="w-full h-12" 
                     value={grade} 
                     onChange={setGrade}
                     size="large"
+                    placeholder="Chọn hoặc nhập khối (1-12)"
+                    optionFilterProp="children"
                   >
                     {[...Array(12)].map((_, i) => (
                       <Option key={i} value={`Lớp ${i + 1}`}>{`Lớp ${i + 1}`}</Option>
