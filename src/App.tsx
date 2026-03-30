@@ -95,7 +95,7 @@ const App = () => {
         },
       }}
     >
-      <div className="min-h-screen bg-blue-50 p-4 md:p-10 font-sans">
+      <div className="notranslate min-h-screen bg-blue-50 p-4 md:p-10 font-sans" translate="no">
         {/* Header */}
         <div className="max-w-6xl mx-auto bg-blue-600 text-white p-8 rounded-t-3xl flex flex-col md:flex-row justify-between items-center shadow-2xl gap-6">
           <div className="text-center md:text-left">
@@ -129,13 +129,10 @@ const App = () => {
                 <div>
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Môn học</label>
                   <Select 
-                    showSearch
-                    autoComplete="none"
                     className="w-full h-12" 
                     value={subject} 
                     onChange={setSubject}
                     size="large"
-                    optionFilterProp="children"
                   >
                     <Option value="Toán học">Toán học</Option>
                     <Option value="Ngữ văn">Ngữ văn</Option>
@@ -153,14 +150,10 @@ const App = () => {
                 <div>
                   <label className="block text-sm font-bold text-gray-500 mb-3 uppercase tracking-tighter">Khối lớp</label>
                   <Select 
-                    showSearch
-                    autoComplete="none"
                     className="w-full h-12" 
                     value={grade} 
                     onChange={setGrade}
                     size="large"
-                    placeholder="Chọn hoặc nhập khối (1-12)"
-                    optionFilterProp="children"
                   >
                     {[...Array(12)].map((_, i) => (
                       <Option key={i} value={`Lớp ${i + 1}`}>{`Lớp ${i + 1}`}</Option>
