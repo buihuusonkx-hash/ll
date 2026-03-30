@@ -60,15 +60,16 @@ const App = () => {
       }
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: { parts },
+        model: "gemini-1.5-flash",
+        contents: [{ role: 'user', parts: parts }],
       });
 
       setResult(response.text || "Không có kết quả trả về.");
       message.success('Đã soạn giáo án thành công!');
     } catch (error) {
-      console.error(error);
-      message.error('Có lỗi xảy ra khi gọi Gemini API. Vui lòng kiểm tra file và thử lại.');
+      console.error("Gemini Error:", error);
+      const detailError = error instanceof Error ? error.message : "Hãy kiểm tra API Key và định dạng file.";
+      message.error(`Có lỗi xảy ra khi gọi Gemini API: ${detailError}`);
     } finally {
       setLoading(false);
     }
